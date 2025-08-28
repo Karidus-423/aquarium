@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvgayk7nnbvyw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_60tw4"]
+
+[node name="Main_UI_Button" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_60tw4")
+
+[node name="button_tag" type="Node3D" parent="MeshInstance3D"]
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D/button_tag"]
