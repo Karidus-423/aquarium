@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://r42mdq8yby2g"]
+[gd_scene load_steps=8 format=3 uid="uid://r42mdq8yby2g"]
+
+[ext_resource type="Script" uid="uid://ccxmqyebem0i7" path="res://scenes/main/main_ui_canvas.gd" id="1_kyffv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jleph"]
 
@@ -7,6 +9,21 @@ albedo_color = Color(0.771309, 0.609334, 0.164126, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bwf7t"]
 material = SubResource("StandardMaterial3D_kyffv")
+
+[sub_resource type="Animation" id="Animation_kyffv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_jleph"]
 resource_name = "idle"
@@ -24,21 +41,6 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 6.26573, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_kyffv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bwf7t"]
 _data = {
 &"RESET": SubResource("Animation_kyffv"),
@@ -46,6 +48,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_kyffv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 12
